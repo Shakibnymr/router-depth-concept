@@ -8,13 +8,13 @@ const Products = () => {
     const realProducts = products.products
     console.log(realProducts,products)
     return (
-        <div>
+        <div >
             {/* <h1 className="text-center text-3xl font-medium">Products Section</h1> */}
-
+<div className="grid grid-cols-3 gap-6 p-5">
 {
     realProducts.map(product => <ProductsCard key={product.id} product={product}></ProductsCard>)
 }
-
+</div>
         </div>
     );
 };

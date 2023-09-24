@@ -23,7 +23,8 @@ const MainLayout = createBrowserRouter([
 
 {
 path: "/products/:id",
-element: <Product></Product>
+element: <Product></Product>,
+loader:({params}) => fetch(`https://dummyjson.com/products/${params.id}`)
 },
 
             {

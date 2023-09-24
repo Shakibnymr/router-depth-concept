@@ -1,7 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
+import Spinner from "../../../components/Spinner/Spinner";
 
 
 const FixedHome = () => {
+
+const navigation = useNavigation();
+// console.log(navigation.state === 'submitting')
+const isLoading = navigation.state === 'loading'
+console.log(isLoading)
+
     return (
         <div className=" text-2xl">
             <div className="flex justify-between items-center shadow-2xl">
@@ -17,7 +24,11 @@ const FixedHome = () => {
                 </div>
             </div>
 
-            <Outlet></Outlet>
+            
+
+ <div>
+ <Outlet></Outlet>
+ </div>
 
 
             <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
